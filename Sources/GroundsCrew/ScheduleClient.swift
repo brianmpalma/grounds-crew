@@ -37,6 +37,14 @@ public enum ScheduleClientError: Error {
 }
 
 public class ScheduleClient {
+
+    public static func fetch(configuration: ScheduleFetchConfiguration) async -> [Schedule.Response.DateInfo.Game] {
+        let scheduleClient = try! ScheduleClient(fetchConfiguration: configuration)
+        let schedule = await scheduleClient.fetch()
+
+        return schedule?.games ?? []
+    }
+
     private let session: URLSession
     private let fetchConfiguration: ScheduleFetchConfiguration
 
