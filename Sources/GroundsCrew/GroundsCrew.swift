@@ -67,9 +67,7 @@ public extension Schedule.Response {
         return venues
     }
 
-//    var games: [Schedule.Response.DateInfo.Game] {
-    public var games: [DateInfo.Game] {
-//        var games: [Schedule.Response.DateInfo.Game] = []
+    public var games: [Schedule.Response.DateInfo.Game] {
         var games: [Schedule.Response.DateInfo.Game] = []
 
         for date in dates {

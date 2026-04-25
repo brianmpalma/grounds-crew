@@ -66,7 +66,7 @@ public class ScheduleClient {
             let (data, response) = try await URLSession.shared.data(from: fetchConfiguration.url)
             guard response.isOK, let jsonString = String(data: data, encoding: .utf8) else { return nil }
 
-            print(jsonString)
+//            print(jsonString)
 
             let schedule = try JSONDecoder().decode(Schedule.Response.self, from: data)
             return schedule
